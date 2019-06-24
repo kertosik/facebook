@@ -15,5 +15,8 @@ export class PostListComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  
+  trackPost(index, post){
+    return post.id;
+  }
 }
