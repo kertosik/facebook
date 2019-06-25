@@ -18,4 +18,6 @@ export class PostListItemComponent implements OnInit {
   trackPost(index, post){
     return post.id;
   }
+
+
 }

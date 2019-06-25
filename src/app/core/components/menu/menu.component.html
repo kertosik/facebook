@@ -1,10 +1,16 @@
 <nav>
-  <ul class="nav">
-<li class="nav-item">
-  <a class="nav-link" routerLink="/">Strona główna</a>
-</li>
-<li class="nav-item">
-  <a class="nav-link" routerLink="/404">Strona 404</a>
-</li>
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" 
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}">Strona główna</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" 
+      routerLink="/404"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact: true}">Strona 404</a>
+    </li>
   </ul>
 </nav>
