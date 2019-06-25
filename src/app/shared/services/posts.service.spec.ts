@@ -73,7 +73,7 @@ describe('PostsService', () => {
 
         it('should make HTTP request"', async () => {
             //1. zarejestrowac request
-            const postId = '52871971-aa05-5ba7-8adc-17874a0b20b4'
+            const postId = 'aaaaaa'
             const response = service.getPostById(postId); // PROMISE
 
             //2. Strowzyc serwer HTTP, ktory bedzie zwracal mockowe dane
@@ -96,7 +96,6 @@ describe('PostsService', () => {
 
             //4 Sprawdzic poprawnosc otrzymanych danych
             expect(posts).toEqual(fakePost);
-
 
         });
 
