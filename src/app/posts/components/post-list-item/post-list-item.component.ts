@@ -6,16 +6,16 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./post-list-item.component.scss']
 })
 export class PostListItemComponent implements OnInit {
-  
-  @Input() post =null;
 
-  constructor() { 
+  @Input() post = null;
+
+  constructor() {
   }
 
   ngOnInit() {
   }
 
-  trackPost(index, post){
+  trackPost(index, post) {
     return post.id;
   }
 

@@ -3,6 +3,7 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 
 import { PostsService } from './posts.service';
 import { IPostList } from '../interfaces/post-list.interface';
+import { IPostListItem } from '../interfaces/post-list-item.interface';
 
 describe('PostsService', () => {
 
@@ -60,5 +61,46 @@ describe('PostsService', () => {
         });
 
     });
+
+
+    describe('getPostById', () => {
+
+        it('should contain method "getPostById"', () => {
+            expect(service.getPosts).toEqual(
+                jasmine.any(Function)
+            );
+        });
+
+        it('should make HTTP request"', async () => {
+            //1. zarejestrowac request
+            const postId = '52871971-aa05-5ba7-8adc-17874a0b20b4'
+            const response = service.getPostById(postId); // PROMISE
+
+            //2. Strowzyc serwer HTTP, ktory bedzie zwracal mockowe dane
+            const server = httpMock.expectOne('assets/posts.json');
+
+            const fakePost = { id: 'aaaaaaa' } as IPostListItem;
+
+            const fakePostList = [
+                fakePost,
+                { id: '1213hf' },
+            ] as IPostList;
+
+            server.flush({
+                posts: fakePostList
+            });
+
+            //3. Pobrac dane z odpowiedzie z servera
+            const posts = await response; // 
+
+
+            //4 Sprawdzic poprawnosc otrzymanych danych
+            expect(posts).toEqual(fakePost);
+
+
+        });
+
+    });
+
 
 });

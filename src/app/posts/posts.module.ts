@@ -4,11 +4,14 @@ import { PostListComponent } from './components/post-list/post-list.component';
 import { PostListItemComponent } from './components/post-list-item/post-list-item.component';
 import { SharedModule } from '../shared/shared.module';
 import { MyDatePipe } from '../shared/pipes/my-date.pipe';
+import { PostProfilePageComponent } from './pages/post-profile-page/post-profile-page.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     PostListComponent,
-    PostListItemComponent
+    PostListItemComponent,
+    PostProfilePageComponent
   ],
 
   exports: [
@@ -18,7 +21,8 @@ import { MyDatePipe } from '../shared/pipes/my-date.pipe';
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    RouterModule,
   ]
 })
 export class PostsModule { }
