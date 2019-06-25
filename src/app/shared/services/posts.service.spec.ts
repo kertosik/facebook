@@ -73,7 +73,7 @@ describe('PostsService', () => {
 
         it('should make HTTP request"', async () => {
             //1. zarejestrowac request
-            const postId = 'aaaaaa'
+            const postId = 'aaaaaaa'
             const response = service.getPostById(postId); // PROMISE
 
             //2. Strowzyc serwer HTTP, ktory bedzie zwracal mockowe dane
