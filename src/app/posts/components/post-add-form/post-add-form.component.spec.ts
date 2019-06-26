@@ -1,23 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CommentAddFormComponent } from './comment-add-form.component';
-import { FormsModule } from '@angular/forms';
+import { PostAddFormComponent } from './post-add-form.component';
 
-describe('CommentAddFormComponent', () => {
-  let component: CommentAddFormComponent;
-  let fixture: ComponentFixture<CommentAddFormComponent>;
+describe('PostAddFormComponent', () => {
+  let component: PostAddFormComponent;
+  let fixture: ComponentFixture<PostAddFormComponent>;
   let $component: any;
-
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [CommentAddFormComponent],
-      imports: [FormsModule]
+      declarations: [ PostAddFormComponent ]
     })
-      .compileComponents();
+    .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CommentAddFormComponent);
+    fixture = TestBed.createComponent(PostAddFormComponent);
     component = fixture.componentInstance;
     $component = fixture.nativeElement;
     fixture.detectChanges();
@@ -27,9 +24,8 @@ describe('CommentAddFormComponent', () => {
     expect(component).toBeTruthy();
   });
 
-
   afterEach(() => {
     $component.remove();
-  });
+  })
 
 });

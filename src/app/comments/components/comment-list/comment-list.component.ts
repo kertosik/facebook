@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ICommentList } from 'src/app/shared/interfaces/comment-list.interfaces';
 
 @Component({
   selector: 'app-comment-list',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./comment-list.component.scss']
 })
 export class CommentListComponent implements OnInit {
-
+ 
+  @Input() comments: ICommentList = null ;
   constructor() { }
 
   ngOnInit() {

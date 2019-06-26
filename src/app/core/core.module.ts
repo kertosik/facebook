@@ -10,6 +10,7 @@ import { PostsModule } from '../posts/posts.module';
 import { SharedModule } from '../shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CommentsModule } from '../comments/comments.module';
+import { PostAddFormComponent } from '../posts/components/post-add-form/post-add-form.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,8 @@ import { CommentsModule } from '../comments/comments.module';
     MenuComponent,
     HomePageComponent,
     NotFoundPageComponent,
+   // PostAddFormComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,9 @@ import { CommentsModule } from '../comments/comments.module';
     PostsModule,
     SharedModule,
     HttpClientModule,
-    CommentsModule,
+   // CommentsModule,
+   
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

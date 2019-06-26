@@ -19,5 +19,12 @@ export class PostListItemComponent implements OnInit {
     return post.id;
   }
 
+  onAddComment(comment) {
+    console.log('onAddComment()', comment);
+    if (!Array.isArray(this.post.comments)) {
+      this.post.comments = [];
+    }
+    this.post.comments.push(comment);
+  };
 
 }

@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CommentListItemComponent } from './comment-list-item.component';
+import { $ } from 'protractor';
+import { ICommentListItem } from 'src/app/shared/interfaces/comment-list-item.interfaces';
+import { trimTrailingNulls } from '@angular/compiler/src/render3/view/util';
 
 describe('CommentListItemComponent', () => {
   let component: CommentListItemComponent;
@@ -9,9 +12,9 @@ describe('CommentListItemComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CommentListItemComponent ]
+      declarations: [CommentListItemComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -24,6 +27,19 @@ describe('CommentListItemComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+
+  it('should be body', () => {
+    component.comment = {
+        body: 'To jest jakis text'
+     } as ICommentListItem;
+
+    fixture.detectChanges();
+
+    const $body = $component.querySelector('.comment-body');
+    expect($body.textContent).toEqual("To jest jakis text");
+  });
+
 
   afterEach(() => {
     $component.remove();

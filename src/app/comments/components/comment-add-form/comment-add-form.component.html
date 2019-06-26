@@ -1,3 +1,21 @@
-<p>
-  comment-add-form works!
-</p>
+<div>
+  <form class="form-inline" (ngSubmit)="onSubmit(commentForm)" #commentForm="ngForm">
+
+    <!--  <pre> {{body.errors | json}}
+      </pre> -->
+
+    <div class="form-group mx-sm-3 mr-3 mb-2">
+      <input type="text" class="form-control" placeholder="Wpisz komentarz" name="body" #body="ngModel"
+        [(ngModel)]="comment.body" required minlength="3">
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="commentForm.invalid">Dodaj</button>
+    <small class="alert alert-danger" *ngIf="body.errors && body.dirty">
+      <span *ngIf="body.errors['required']">Aby dodać komentarz wpisz tekst</span>
+      <span *ngIf="body.errors['minlength']">Minimalna ilość znaków to 3</span>
+    </small>
+
+
+
+
+  </form>
+</div>

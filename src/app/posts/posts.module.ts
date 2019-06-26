@@ -7,24 +7,29 @@ import { MyDatePipe } from '../shared/pipes/my-date.pipe';
 import { PostProfilePageComponent } from './pages/post-profile-page/post-profile-page.component';
 import { RouterModule } from '@angular/router';
 import { CommentsModule } from '../comments/comments.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PostAddFormComponent } from './components/post-add-form/post-add-form.component';
 
 @NgModule({
   declarations: [
     PostListComponent,
     PostListItemComponent,
-    PostProfilePageComponent
+    PostProfilePageComponent,
+    PostAddFormComponent
   ],
 
   exports: [
     PostListComponent,
     PostListItemComponent,
-    MyDatePipe
+    MyDatePipe,
+    PostAddFormComponent,
   ],
   imports: [
     CommonModule,
     SharedModule,
     RouterModule,
     CommentsModule,
+    ReactiveFormsModule,
   ]
 })
 export class PostsModule { }

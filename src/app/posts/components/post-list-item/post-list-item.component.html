@@ -7,7 +7,7 @@
         <h5 class="card-title">
           {{ post.author.name }}
         </h5>
-        <h6 class="card-subtitle mb2 text-muted" >
+        <h6 class="card-subtitle mb2 text-muted">
           <!-- {{post.created_time | date }} -->
           <a routerLink="posts/{{ post.id }}"> {{post.created_time | myDate}}</a>
         </h6>
@@ -21,10 +21,11 @@
       </p>
     </div>
     <div class="card-footer">
-     
-      <app-comment-list></app-comment-list>
-      <app-comment-add-form></app-comment-add-form>
-      
+
+      <app-comment-list [comments]="post.comments"></app-comment-list>
+      <app-comment-add-form (addComment)="onAddComment($event)">
+      </app-comment-add-form>
+
     </div>
 
   </div>
