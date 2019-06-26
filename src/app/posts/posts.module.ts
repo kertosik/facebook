@@ -6,6 +6,7 @@ import { SharedModule } from '../shared/shared.module';
 import { MyDatePipe } from '../shared/pipes/my-date.pipe';
 import { PostProfilePageComponent } from './pages/post-profile-page/post-profile-page.component';
 import { RouterModule } from '@angular/router';
+import { CommentsModule } from '../comments/comments.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     SharedModule,
     RouterModule,
+    CommentsModule,
   ]
 })
 export class PostsModule { }

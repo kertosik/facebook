@@ -5,6 +5,7 @@ import { PostListItemComponent } from '../../components/post-list-item/post-list
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { RouterTestingModule } from '@angular/router/testing';
+import { CommentsModule } from 'src/app/comments/comments.module';
 
 describe('PostProfilePageComponent', () => {
   let component: PostProfilePageComponent;
@@ -14,7 +15,7 @@ describe('PostProfilePageComponent', () => {
     TestBed.configureTestingModule({
       declarations: [PostProfilePageComponent, PostListItemComponent],
       imports: [
-        HttpClientTestingModule, SharedModule, RouterTestingModule,
+        HttpClientTestingModule, SharedModule, RouterTestingModule,CommentsModule,
       ]
     })
       .compileComponents();
