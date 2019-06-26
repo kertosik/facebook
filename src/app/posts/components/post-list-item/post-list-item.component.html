@@ -1,18 +1,26 @@
 <ng-container *ngIf="post">
-  <div class="card m-3" style="width: 18rem;">
+  <div class="card m-3">
+
+    <div class="card-header d-flex">
+      <img [src]="post.author.avatar_url" class="avatar mr-3 rounded-sm" alt="">
+      <div>
+        <h5 class="card-title">
+          {{ post.author.name }}
+        </h5>
+        <h6 class="card-subtitle mb2 text-muted" >
+          <!-- {{post.created_time | date }} -->
+          <a routerLink="posts/{{ post.id }}"> {{post.created_time | myDate}}</a>
+        </h6>
+      </div>
+    </div>
     <!-- <img class="card-img-top" src="..." alt="Card image cap">-->
     <img [src]="post.images[0]" class="card-img-top" routerLink="posts/{{ post.id }}" alt="">
     <div class="card-body">
-      <h5 class="card-title">
-        {{ post.author.name }}
-      </h5>
-      <h6 class="card-subtitle mb2 text-muted">
-        <!-- {{post.created_time | date }} -->
-        {{post.created_time | myDate}}
-      </h6>
       <p class="card-text">
         {{ post.body }}
       </p>
     </div>
+    <div class="card-footer"> ... </div>
+
   </div>
 </ng-container>
