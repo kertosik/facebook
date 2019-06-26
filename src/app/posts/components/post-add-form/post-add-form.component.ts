@@ -30,7 +30,7 @@ export class PostAddFormComponent implements OnInit {
     fields.author= {
       id: 'aaaaaaaa',
       name: 'Anonymous',
-      avatar_url: ':)'
+      avatar_url: 'http://placeskull.com/50/50/800517'
     }
     fields.create_date= new Date().toUTCString();
     fields.images=['http://placekitten.com/g/200/300']
